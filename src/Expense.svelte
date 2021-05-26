@@ -1,11 +1,13 @@
 <script>
+    import {getContext} from 'svelte'
     import ExpensesList from './ExpensesList.svelte';
     export let data;
-    export let removeExpense;
+
     let displayAmount = false;
     function display(){
         displayAmount = !displayAmount;
     }
+    const {remove}  = getContext('state');
 </script>
 <style>
     
@@ -22,7 +24,7 @@
         <button class="expense-btn edit-btn">
             <i class="fas fa-pen"></i>
         </button>
-        <button on:click={()=> removeExpense(data.id)} class="expense-btn delete-btn">
+        <button on:click={()=> remove(data.id)} class="expense-btn delete-btn">
             <i class="fas fa-trash"></i>
         </button>
     </div>

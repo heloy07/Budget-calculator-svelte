@@ -2,7 +2,7 @@
     import Expense from "./Expense.svelte";
     import Title from "./Title.svelte";
     export let expensesList = [];
-    export let removeExpense;
+
 </script>
 <style>h2{
     text-transform:capitalize;
@@ -13,7 +13,7 @@
     <ul />
 </section>
 {#each expensesList as exp}
-    <Expense data={exp} {removeExpense} />
+    <Expense data={exp} />
     {:else}
     <h2>Currently no expenses</h2>
 {/each}
