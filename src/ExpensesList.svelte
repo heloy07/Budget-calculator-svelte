@@ -1,7 +1,9 @@
 <script>
     import Expense from "./Expense.svelte";
+    import {getContext} from 'svelte';
     import Title from "./Title.svelte";
     export let expensesList = [];
+    const {removeAll} = getContext('state');
 
 </script>
 <style>h2{
@@ -17,3 +19,4 @@
     {:else}
     <h2>Currently no expenses</h2>
 {/each}
+<button type="button" class="btn btn-primary btn-block" on:click={removeAll}>clear expenses</button>
