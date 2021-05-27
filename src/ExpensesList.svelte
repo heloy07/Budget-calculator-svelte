@@ -3,6 +3,7 @@
     import {getContext} from 'svelte';
     import Title from "./Title.svelte";
     export let expensesList = [];
+    export let totalAmount = 0;
     const {removeAll} = getContext('state');
 
 </script>
@@ -11,6 +12,7 @@
 }</style>
 
 <section>
+    <h1 class="main-title">Total Expenses: ${totalAmount} </h1>
     <Title title="Expensive List" />
     <ul />
 </section>
