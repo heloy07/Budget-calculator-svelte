@@ -27,14 +27,12 @@
 		expenses = [];
 	}
 	function addExpense(name,amount){
-		const id = Math.random() * Date.now();
-		expenses.unshift({
-			id:id,
+		const expense = {
+			id:Math.random() * Date.now(),
 			name:name,
-			amount:amount});
-		
-		//push or unshit won't update the component by default so you need some redundant assign like this
-		expenses=expenses;
+			amount:amount
+		}
+		expenses=[expense,...expenses];
 	}
 	//context
 	setContext("state", state);

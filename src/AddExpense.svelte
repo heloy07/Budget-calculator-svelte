@@ -8,13 +8,19 @@
     const { addExpense } = getContext("state");
     //truthy value is considered TRUE when encountered in boolean context, so if they're empty or null it will be evaluated to false
     $: isEmpty = !name || !amount;
+
+    function handleSubmit(){
+        addExpense(name,amount);
+        //reset form
+        name='';
+        amount=null;
+    }
 </script>
 
 <section class="form">
     <Title title="Add expense" />
-
     <form
-        on:submit|preventDefault={() => addExpense(name, amount)}
+        on:submit|preventDefault={handleSubmit}
         class="expense-form"
     >
         <div class="form-control">
