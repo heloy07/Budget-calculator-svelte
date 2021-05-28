@@ -28,12 +28,12 @@
 	}
 	function addExpense(name,amount){
 		const id = Math.random() * Date.now();
-		console.log('name:'+name+', amount: '+ amount+ ', id: '+ id );
 		expenses.unshift({
 			id:id,
 			name:name,
 			amount:amount});
-		console.log(expenses);
+		
+		//push or unshit won't update the component by default so you need some redundant assign like this
 		expenses=expenses;
 	}
 	//context
